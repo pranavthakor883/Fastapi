@@ -5,7 +5,7 @@ from database import conn
 
 app = FastAPI()
 
-
+#Hi this is parag
 class User(BaseModel):
     name: str
     age: int
