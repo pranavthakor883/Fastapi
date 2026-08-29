@@ -1,12 +1,15 @@
+import os
 import psycopg
+from dotenv import load_dotenv
 
-# One single connection used by the whole app
+load_dotenv()
+
 conn = psycopg.connect(
-    host="localhost",
-    port=5432,
-    dbname="api_db",
-    user="postgres",
-    password="1146"
+    host=os.getenv("DB_HOST"),
+    port=os.getenv("DB_PORT"),
+    dbname=os.getenv("DB_NAME"),
+    user=os.getenv("DB_USER"),
+    password=os.getenv("DB_PASSWORD")
 )
 
 print("Database Connected!")
